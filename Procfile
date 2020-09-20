@@ -1,1 +1,1 @@
-web: gunicorn app:sample4
+web: gunicorn app:app
