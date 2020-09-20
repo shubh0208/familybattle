@@ -1,0 +1,81 @@
+
+table, th, td
+{
+  border: 1px solid black;
+  padding: 5px;
+}
+.team_table
+{
+	display: none;
+	font-family: 'Grenze';
+	font-size: 19px;
+}
+.team_heading
+{
+	cursor: pointer;
+	font-family: 'Cormorant Upright';
+	font-size: 24px;
+   	text-align: center;
+	font-size: 50px;
+	
+}
+#point_table
+{
+	display: none;	
+}
+#team1
+{
+
+}
+#team2
+{
+
+}
+#team3
+{
+
+}
+#team4
+{
+
+}
+#team5
+{
+
+}
+#rank
+{
+background-color: #83F52C;
+}
+#shubh
+{
+background-color: #FFFF3C;
+}
+#karan
+{
+background-color: #004BA0;
+}
+#harsh
+{
+background-color: #ED1B24;
+}
+#amish
+{
+background-color: #FF822A;
+}
+#viraj
+{
+background-color: #E83895;
+}
+
+body
+{
+	background-color: white;
+}
+#menu
+{
+	text-align: center;
+	font-family: 'Grenze';
+	font-size: 42px;
+	
+}

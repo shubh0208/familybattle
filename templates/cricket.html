@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='cricket.css')}}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+<link href='https://fonts.googleapis.com/css?family=Cormorant Upright' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Grenze' rel='stylesheet'>
+<head>
+	<title></title>
+</head>
+
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<br>
+	
+	<div id ="menu">Welcome to the Family Cricket Battle</div>
+	<br>
+	<br>
+	<br>
+	<div id="shubh" class="team_heading">
+		Team Shubh
+	</div>
+	<br>
+	<div id="team1" class="team_table">
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Runs</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(posts.Players|length) %}
+    <tr>
+    	<th>{{ posts.Players[i] }}</th>
+    	<th>{{ posts.Matches[i] }} </th>
+    	<th>{{ posts.Runs[i] }} </th>
+    	<th>{{ posts.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+	<br>
+	
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Wickets</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(Posts.Players|length) %}
+    <tr>
+    	<th>{{ Posts.Players[i] }}</th>
+    	<th>{{ Posts.Matches[i] }} </th>
+    	<th>{{ Posts.Wickets[i] }} </th>
+    	<th>{{ Posts.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+	</div>
+
+<br>
+<br>
+	<div id="karan"  class="team_heading">
+		Team Karan
+	</div>
+	<br>
+<div id="team2" class="team_table">
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Runs Scored</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(posts2.Players|length) %}
+    <tr>
+    	<th>{{ posts2.Players[i] }}</th>
+    	<th>{{ posts2.Matches[i] }}</th>
+    	<th>{{ posts2.Runs[i] }} </th>
+    	<th>{{ posts2.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+	<br>
+	
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Wickets</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(Posts2.Players|length) %}
+    <tr>
+    	<th>{{ Posts2.Players[i] }}</th>
+    	<th>{{ Posts2.Matches[i] }}</th>
+    	<th>{{ Posts2.Wickets[i] }} </th>
+    	<th>{{ Posts2.Points[i] }}</th>
+
+    </tr>
+	{% endfor %}
+	</table>
+</div>
+
+
+<br>
+<br>
+	<div id="harsh" class="team_heading">
+		Team Harsh
+	</div>
+	<br>
+<div id="team3" class="team_table">
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Runs Scored</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(posts3.Players|length) %}
+    <tr>
+    	<th>{{ posts3.Players[i] }}</th>
+    	<th>{{ posts3.Matches[i] }} </th>
+    	<th>{{ posts3.Runs[i] }} </th>
+    	<th>{{ posts3.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+	<br>
+	
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Wickets</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(Posts3.Players|length ) %}
+    <tr>
+    	<th>{{ Posts3.Players[i] }}</th>
+    	<th>{{ Posts3.Matches[i] }} </th>
+    	<th>{{ Posts3.Wickets[i] }} </th>
+    	<th>{{ Posts3.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+</div>
+
+<br>
+<br>
+	<div id="amish" class="team_heading">
+		Team Amish
+	</div>
+	<br>
+<div id="team4" class="team_table">
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Runs Scored</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range( posts4.Players|length) %}
+    <tr>
+    	<th>{{ posts4.Players[i] }}</th>
+    	<th>{{ posts4.Matches[i] }} </th>
+    	<th>{{ posts4.Runs[i] }} </th>
+    	<th>{{ posts4.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+	<br>
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Wickets</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(Posts4.Players|length) %}
+    <tr>
+    	<th>{{ Posts4.Players[i] }}</th>
+    	<th>{{ Posts4.Matches[i] }} </th>
+    	<th>{{ Posts4.Wickets[i] }} </th>
+    	<th>{{ Posts4.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+</div>
+<br>
+<br>
+
+	<div id="viraj" class="team_heading">
+		Team Viraj
+	</div>
+	<br>
+<div id="team5" class="team_table">
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Runs Scored</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range( posts5.Players|length) %}
+    <tr>
+    	<th>{{ posts5.Players[i] }}</th>
+    	<th>{{ posts5.Matches[i] }} </th>
+    	<th>{{ posts5.Runs[i] }} </th>
+    	<th>{{ posts5.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+	<br>
+
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Wickets</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(Posts5.Players|length) %}
+    <tr>
+    	<th>{{ Posts5.Players[i] }}</th>
+    	<th>{{ Posts5.Matches[i] }} </th>
+    	<th>{{ Posts5.Wickets[i] }} </th>
+    	<th>{{ Posts5.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+</div>
+<br>
+<br>
+
+<div id="rank" class="team_heading">
+	Current Rankings 
+</div>
+<br>
+<div id="point_table" >
+	<table>
+		<tr>
+			<th>Rank</th>
+			<th>Team Name</th>
+			<th>Batting Points</th>
+			<th>Bowling Points</th>
+			<th>Total Points</th>
+		</tr>
+		{% for i in range(5) %}
+		<tr>
+			<th>{{ (i+1) }}</th>
+			<th>{{ point_table[i][0] }}</th>
+			<th>{{ point_table[i][1] }}</th>
+			<th>{{ point_table[i][2] }}</th>
+			<th>{{ point_table[i][3] }}</th>
+
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function()  {
+			
+		$("#shubh").click(function(){
+			$("#team1").slideToggle();
+			$("#team2").hide();
+			$("#team3").hide();
+			$("#team4").hide();
+			$("#team5").hide();
+		});
+		});
+
+	$(document).ready(function()  {
+			
+		$("#karan").click(function(){
+			$("#team2").slideToggle();
+			$("#team1").hide();
+			$("#team3").hide();
+			$("#team4").hide();
+			$("#team5").hide();
+		});
+		});
+
+	$(document).ready(function()  {
+			
+		$("#harsh").click(function(){
+			$("#team3").slideToggle();
+			$("#team2").hide();
+			$("#team1").hide();
+			$("#team4").hide();
+			$("#team5").hide();
+		});
+		});
+
+	$(document).ready(function()  {
+			
+		$("#amish").click(function(){
+			$("#team4").slideToggle();
+			$("#team2").hide();
+			$("#team3").hide();
+			$("#team1").hide();
+			$("#team5").hide();
+		});
+		});
+
+	$(document).ready(function()  {
+			
+		$("#viraj").click(function(){
+			$("#team5").slideToggle();
+			$("#team2").hide();
+			$("#team3").hide();
+			$("#team4").hide();
+			$("#team1").hide();
+		});
+		});
+
+	$(document).ready(function()  {
+			
+		$("#rank").click(function(){
+			$("#point_table").slideToggle();
+			$("#team1").hide();
+			$("#team2").hide();
+			$("#team3").hide();
+			$("#team4").hide();
+			$("#team5").hide();
+		});
+		});
+</script>
+</body>
+</html>
+ 
