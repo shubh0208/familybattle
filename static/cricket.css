@@ -1,4 +1,9 @@
-
+#cssmarquee
+{
+	font-family: 'Grenze';
+	font-size: 20px;
+	background-color: #FFD598;
+}
 table, th, td
 {
   border: 1px solid black;
@@ -23,6 +28,10 @@ table, th, td
 {
 	display: none;	
 }
+#Table_points
+{
+	background-color: #C7F5B3;
+}
 #team1
 {
 
@@ -45,7 +54,7 @@ table, th, td
 }
 #rank
 {
-background-color: #83F52C;
+background-color: #B7F5F4;
 }
 #shubh
 {
@@ -53,7 +62,7 @@ background-color: #FFFF3C;
 }
 #karan
 {
-background-color: #004BA0;
+background-color: #EA99F6;
 }
 #harsh
 {

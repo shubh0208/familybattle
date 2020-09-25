@@ -102,7 +102,7 @@ def hello_world():
 	team1_bowl_data=data_bowl.loc[data_bowl["PLAYER"].isin(team1_bowl),["PLAYER","Matches","Wkts"]]
 	y=[]
 	for i in team1_bowl_data:
-	    team1_bowl_point.append(20*team1_bowl_data["Wkts"])
+	    team1_bowl_point.append(25*team1_bowl_data["Wkts"])
 	    y.append(team1_bowl_data["Wkts"])
 	team1_bowl_data.insert(2,"Points",team1_bowl_point[0],True)
 	a=0
@@ -146,7 +146,7 @@ def hello_world():
 	team2_bowl_data=data_bowl.loc[data_bowl["PLAYER"].isin(team2_bowl),["PLAYER","Matches","Wkts"]]
 	y=[]
 	for i in team2_bowl_data:
-	    team2_bowl_point.append(20*team2_bowl_data["Wkts"])
+	    team2_bowl_point.append(25*team2_bowl_data["Wkts"])
 	    y.append(team2_bowl_data["Wkts"])
 	team2_bowl_data.insert(2,"Points",team2_bowl_point[0],True)
 	a=0
@@ -188,7 +188,7 @@ def hello_world():
 	team3_bowl_data=data_bowl.loc[data_bowl["PLAYER"].isin(team3_bowl),["PLAYER","Matches","Wkts"]]
 	y=[]
 	for i in team3_bowl_data:
-	    team3_bowl_point.append(20*team3_bowl_data["Wkts"])
+	    team3_bowl_point.append(25*team3_bowl_data["Wkts"])
 	    y.append(team3_bowl_data["Wkts"])
 	team3_bowl_data.insert(2,"Points",team3_bowl_point[0],True)
 	a=0
@@ -228,7 +228,7 @@ def hello_world():
 	team4_bowl_data=data_bowl.loc[data_bowl["PLAYER"].isin(team4_bowl),["PLAYER","Matches","Wkts"]]
 	y=[]
 	for i in team4_bowl_data:
-	    team4_bowl_point.append(20*team4_bowl_data["Wkts"])
+	    team4_bowl_point.append(25*team4_bowl_data["Wkts"])
 	    y.append(team4_bowl_data["Wkts"])
 	team4_bowl_data.insert(2,"Points",team4_bowl_point[0],True)
 	a=0
@@ -272,7 +272,7 @@ def hello_world():
 	team5_bowl_data=data_bowl.loc[data_bowl["PLAYER"].isin(team5_bowl),["PLAYER","Matches","Wkts"]]
 	y=[]
 	for i in team5_bowl_data:
-	    team5_bowl_point.append(20*team5_bowl_data["Wkts"])
+	    team5_bowl_point.append(25*team5_bowl_data["Wkts"])
 	    y.append(team5_bowl_data["Wkts"])
 	team5_bowl_data.insert(2,"Points",team5_bowl_point[0],True)
 	a=0

@@ -10,12 +10,16 @@
 
 <body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<marquee width="100%" direction="left" height="35px" id="cssmarquee" >
+	Latest updates: 	 {{ point_table[0][0] }} is leading right now with {{ point_table[0][3] }} Points, followed by {{ point_table[1][0] }} at 2nd place with {{ point_table[1][3] }} Points.
+	</marquee>
 	<br>
-	
+
 	<div id ="menu">Welcome to the Family Cricket Battle</div>
 	<br>
 	<br>
-	<br>
+	
 	<div id="shubh" class="team_heading">
 		Team Shubh
 	</div>
@@ -243,7 +247,7 @@
 <br>
 
 <div id="rank" class="team_heading">
-	Current Rankings 
+	Leaderboard 
 </div>
 <br>
 <div id="point_table" >
@@ -253,7 +257,8 @@
 			<th>Team Name</th>
 			<th>Batting Points</th>
 			<th>Bowling Points</th>
-			<th>Total Points</th>
+			<th id="Table_points">Total Points</th>
+			<th>Points to win</th>
 		</tr>
 		{% for i in range(5) %}
 		<tr>
@@ -261,8 +266,8 @@
 			<th>{{ point_table[i][0] }}</th>
 			<th>{{ point_table[i][1] }}</th>
 			<th>{{ point_table[i][2] }}</th>
-			<th>{{ point_table[i][3] }}</th>
-
+			<th id="Table_points">{{ point_table[i][3] }}</th>
+			<th>{{ point_table[0][3]-point_table[i][3] }}</th>
 		</tr>
 		{% endfor %}
 	</table>
