@@ -9,21 +9,24 @@ app = Flask(__name__)
   
 @app.route('/') 
  
-def hello_world(): 
-	team1_bat=["KL Rahul", "Hardik Pandya","David Warner","Suresh Raina","AB de Villiers","Shikhar Dhawan","Mohammad Shami","Mohammad Nabi","Jofra Archer","Kuldeep Yadav","Navdeep Saini"]
+def hello_world():
+
+	team1_bat=["Rishabh Pant","Jasprit Bumrah","Suresh Raina","Andre Russell","Mohammad Shami","Ishan Kishan","Jos Buttler","Prithvi Shaw","T Natarajan","Mohammed Siraj","Kieron Pollard","Vijay Shankar","Pat Cummins"]
 	team1_bowl=team1_bat
 
-	team2_bat=["Virat Kohli","Jasprit Bumrah","Rashid Khan","Dwayne Bravo","Andre Russell","Ajinkya Rahane","Bhuvneshwar Kumar","MS Dhoni","Mayank Agarwal","Sandeep Lamichhane","Umesh Yadav"]
+	team2_bat=["Rashid Khan","Rohit Sharma","Jofra Archer","Krunal Pandya","Chris Woakes","Deepak Chahar","Rahul Chahar","Jonny Bairstow","Shardul Thakur","Navdeep Saini","Riley Meredith","Prasidh Krishna","Dinesh Karthik"]
 	team2_bowl=team2_bat
 	
-	team3_bat=["Rohit Sharma","Shreyas Iyer","Ishan Kishan","Glenn Maxwell","Eoin Morgan","Ben Stokes","Imran Tahir","Ravichandran Ashwin","Shardul Thakur","Rahul Chahar","Siddarth Kaul"]
+	team3_bat=["Virat Kohli","KL Rahul","Suryakumar Yadav","Ben Stokes","Manish Pandey","Quinton de Kock","Varun Chakravarthy","Trent Boult","Sanju Samson","Marcus Stoinis","Sandeep Sharma","Eoin Morgan","Ruturaj Gaikwad"]
 	team3_bowl=team3_bat
 	
-	team4_bat=["Sunil Narine","Rishabh Pant","Shubman Gill","Steve Smith","Yuzvendra Chahal","Manish Pandey","Khaleel Ahmed","Suryakumar Yadav","Pat Cummins","Krunal Pandya","Deepak Chahar"]
+	team4_bat=["David Warner","Shikhar Dhawan","Yuzvendra Chahal","Kagiso Rabada","Mayank Agarwal","Shubman Gill","Sam Curran","Nitish Rana","Shreyas Gopal","Axar Patel","Faf du Plessis","David Malan","Rahul Tewatia"]
 	team4_bowl=team4_bat
 
-	team5_bat=["Jos Buttler","Sanju Samson","Prithvi Shaw","Ravindra Jadeja","Aaron Finch","Washington Sundar","Kagiso Rabada","Nitish Rana","Ambati Rayudu","Mujeeb Ur Rahman","Prasidh Krishna"]
+	team5_bat=["Hardik Pandya", "Glenn Maxwell","Bhuvneshwar Kumar","AB de Villiers","Ravichandran Ashwin","Sunil Narine","Ravindra Jadeja","Devdutt Padikkal","Moeen Ali","Washington Sundar","Ambati Rayudu","Chris Gayle","MS Dhoni"]
 	team5_bowl=team5_bat
+
+	
 
 	source = requests.get("https://www.iplt20.com/stats/2021/most-runs").text
 	soup=BeautifulSoup(source,'lxml')
