@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
 import pandas as pd
-import requests
-
+import requests	
 import numpy as np
 from flask import Flask, render_template, url_for
 
@@ -26,10 +25,10 @@ def hello_world():
 	team5_bat=["Jos Buttler","Sanju Samson","Prithvi Shaw","Ravindra Jadeja","Aaron Finch","Washington Sundar","Kagiso Rabada","Nitish Rana","Ambati Rayudu","Mujeeb Ur Rahman","Prasidh Krishna"]
 	team5_bowl=team5_bat
 
-	source = requests.get("https://www.iplt20.com/stats/2020/most-runs").text
+	source = requests.get("https://www.iplt20.com/stats/2021/most-runs").text
 	soup=BeautifulSoup(source,'lxml')
 
-	source2=requests.get("https://www.iplt20.com/stats/2020/most-wickets").text
+	source2=requests.get("https://www.iplt20.com/stats/2021/most-wickets").text
 	soup2=BeautifulSoup(source2,'lxml')
 
 	
