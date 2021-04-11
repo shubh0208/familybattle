@@ -21,10 +21,14 @@ table, th, td
 	font-family: 'Cormorant Upright';
 	font-size: 24px;
    	text-align: center;
-	font-size: 50px;
-	
+	font-size: 50px;	
 }
+
 #point_table
+{
+	display: none;	
+}
+#point_table2
 {
 	display: none;	
 }
@@ -32,25 +36,13 @@ table, th, td
 {
 	background-color: #C7F5B3;
 }
-#team1
+#battle2
 {
-
+	display: none;
 }
-#team2
+#battle
 {
-
-}
-#team3
-{
-
-}
-#team4
-{
-
-}
-#team5
-{
-
+	display: none;
 }
 #rank
 {
@@ -75,6 +67,18 @@ background-color: #FF822A;
 #viraj
 {
 background-color: #E83895;
+}
+#karan2
+{
+background-color: #EA99F6;
+}
+#kavin
+{
+background-color: #ED1B24;
+}
+#rank2
+{
+background-color: #B7F5F4;
 }
 
 body

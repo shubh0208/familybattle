@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
-import pandas as pd
 import requests	
+import pandas as pd
 import numpy as np
 from flask import Flask, render_template, url_for
 
@@ -26,6 +26,15 @@ def hello_world():
 	team5_bat=["Hardik Pandya", "Glenn Maxwell","Bhuvneshwar Kumar","AB de Villiers","Ravichandran Ashwin","Sunil Narine","Ravindra Jadeja","Devdutt Padikkal","Moeen Ali","Washington Sundar","Ambati Rayudu","Chris Gayle","MS Dhoni"]
 	team5_bowl=team5_bat
 
+	team6_bat=["Virat Kohli","Rohit Sharma","Jasprit Bumrah","Trent Boult","Shubman Gill","Rashid Khan","Jos Buttler","AB de Villiers","Chris Morris","Rishabh Pant","Mohammad Shami","Shikhar Dhawan","Suresh Raina","Glenn Maxwell","Yuzvendra Chahal","Hardik Pandya","Sanju Samson","Ravindra Jadeja","Nitish Rana","Ravichandran Ashwin","Eoin Morgan","Deepak Chahar","Prithvi Shaw","Shakib Al Hasan","Navdeep Saini","Jonny Bairstow","Dwayne Bravo","Steve Smith"]
+	team6_bowl=team6_bat
+	team6_bonus=["Virat Kohli","Jasprit Bumrah","Rohit Sharma","Rashid Khan"]
+	Bonus_team6_dict={"Virat Kohli":0,"Rohit Sharma":0,"Jasprit Bumrah":0,"Rashid Khan":0}
+
+	team7_bat=["Ben Stokes","KL Rahul","David Warner","Kagiso Rabada","Suryakumar Yadav","Anrich Nortje","Mayank Agarwal","Faf du Plessis","Marcus Stoinis","Bhuvneshwar Kumar","Andre Russell","Sam Curran","Shardul Thakur","T Natarajan","Devdutt Padikkal","Quinton de Kock","Pat Cummins","Varun Chakravarthy","Rahul Chahar","Manish Pandey","Dan Christian","Axar Patel","Rahul Tewatia","Mohammed Siraj","Ishan Kishan","Kane Williamson","Nicholas Pooran"]
+	team7_bowl=team7_bat
+	team7_bonus=["David Warner","Andre Russell","Hardik Pandya","Sunil Narine"]
+	Bonus_team7_dict={"David Warner":0,"Ben Stokes":0,"Kagiso Rabada":0,"KL Rahul":0}
 	
 
 	source = requests.get("https://www.iplt20.com/stats/2021/most-runs").text
@@ -311,11 +320,178 @@ def hello_world():
 	print(team5_BowlFinal)
 	#End Team5
 
+
+	# Start team6
+	team6_bat_point=[]
+	team6_bowl_point=[]
+	Bonus_team6_data=[]
+	team6_bat_data=file.loc[file["Player"].isin(team6_bat),["Player","Matches","Runs"]]
+	Bonus_team6_DF1=pd.DataFrame(team6_bat_data)
+	team6_bowl_data=data_bowl.loc[data_bowl["PLAYER"].isin(team6_bowl),["PLAYER","Matches","Wkts"]]
+	Bonus_team6_DF2=pd.DataFrame(team6_bowl_data)
+	for key in Bonus_team6_dict:
+		for i in Bonus_team6_DF1.index:
+			if (Bonus_team6_DF1["Player"][i]==key):
+				Bonus_team6_dict[key]=Bonus_team6_dict[key]+int(Bonus_team6_DF1["Runs"][i])
+		for j in Bonus_team6_DF2.index:
+			if (Bonus_team6_DF2["PLAYER"][j]==key):
+				Bonus_team6_dict[key]=Bonus_team6_dict[key]+int(Bonus_team6_DF2["Wkts"][j])*25
+	
+	Bonus_team6_tuples=[("Virat Kohli",Bonus_team6_dict["Virat Kohli"]),("Rohit Sharma",Bonus_team6_dict["Rohit Sharma"]),("Jasprit Bumrah",Bonus_team6_dict["Jasprit Bumrah"]),("Rashid Khan",Bonus_team6_dict["Rashid Khan"])]
+	#for key in Bonus_team6_dict:
+	#	Bonus_team6_tuples.append((key,Bonus_team6_dict[key]))
+	Bonus_team6_tuples.sort(key = lambda x: x[1], reverse=True)	
+			
+	y=0
+	for i in Bonus_team6_DF2.index:
+		y=y+int(Bonus_team6_DF2["Wkts"][i])
+		if (Bonus_team6_tuples[0][0]==Bonus_team6_DF2["PLAYER"][i]):
+			team6_bowl_point.append(50*Bonus_team6_DF2["Wkts"][i])
+		elif Bonus_team6_tuples[1][0]==Bonus_team6_DF2["PLAYER"][i]:
+			team6_bowl_point.append(37.5*Bonus_team6_DF2["Wkts"][i])
+		else:
+			team6_bowl_point.append(25*Bonus_team6_DF2["Wkts"][i])	
+	   # y=y+int(Bonus_team6_DF2["Wkts"][i])
+
+	team6_bowl_data.insert(2,"Points",team6_bowl_point,True)
+	a=0
+	for i in Bonus_team6_DF1.index:
+		if Bonus_team6_tuples[0][0]==Bonus_team6_DF1["Player"][i]:
+			team6_bat_point.append(2*int(Bonus_team6_DF1["Runs"][i]))
+		elif Bonus_team6_tuples[1][0]==Bonus_team6_DF1["Player"][i]:
+			team6_bat_point.append(1.5*int(Bonus_team6_DF1["Runs"][i]))
+		else:
+			team6_bat_point.append(1*int(Bonus_team6_DF1["Runs"][i]))
+		a=a+int(Bonus_team6_DF1["Runs"][i])
+
+
+
+	   # team6_bat_point.append(team6_bat_data["Runs"])
+	#for i in range(len(team6_bat_point)):
+		 #a=a+int(team6_bat_point[i])
+	team6_bat_data.insert(3, "Points", team6_bat_point, True)
+	team6_bat_TRP=(sum(team6_bat_point))
+	team6_bowl_TWP=(sum(team6_bowl_point))
+	team6_total_points=team6_bat_TRP+team6_bowl_TWP
+	team6_bat_point={"Player":"Total","Matches":"","Runs":a,"Points":team6_bat_TRP}
+	team6_bowl_point={"PLAYER":"Total","Matches":"","Wkts":y,"Points":team6_bowl_TWP}
+	team6_bat_data=team6_bat_data.append(team6_bat_point,ignore_index=True,sort=False)	
+	team6_bowl_data=team6_bowl_data.append(team6_bowl_point,ignore_index=True,sort=False)
+	print(team6_bowl_data)
+	print("\n")
+	print(team6_bat_data)
+	print("\n")
+	print(team6_bat_TRP,team6_bowl_TWP,team6_total_points)
+	team6_BatFinal={}
+	team6_BowlFinal={}
+	team6_BatFinal["Players"]=team6_bat_data["Player"]
+	team6_BatFinal["Runs"]=team6_bat_data["Runs"]
+	team6_BatFinal["Points"]=team6_bat_data["Points"]
+	team6_BatFinal["Matches"]=team6_bat_data["Matches"]
+	team6_BowlFinal["Players"]=team6_bowl_data["PLAYER"]
+	team6_BowlFinal["Wickets"]=team6_bowl_data["Wkts"]
+	team6_BowlFinal["Points"]=team6_bowl_data["Points"]
+	team6_BowlFinal["Matches"]=team6_bowl_data["Matches"]
+	print(team6_BatFinal)
+	print("\n")
+	print(team6_BowlFinal)
+	#End team6
+
+
+	# Start team7
+	team7_bat_point=[]
+	team7_bowl_point=[]
+	team7_bat_data=file.loc[file["Player"].isin(team7_bat),["Player","Matches","Runs"]]
+	Bonus_team7_DF1=pd.DataFrame(team7_bat_data)
+	team7_bowl_data=data_bowl.loc[data_bowl["PLAYER"].isin(team7_bowl),["PLAYER","Matches","Wkts"]]
+	Bonus_team7_DF2=pd.DataFrame(team7_bowl_data)
+
+	for key in Bonus_team7_dict:
+			for i in Bonus_team7_DF1.index:
+				if (Bonus_team7_DF1["Player"][i]==key):
+					Bonus_team7_dict[key]=Bonus_team7_dict[key]+int(Bonus_team7_DF1["Runs"][i])
+			for j in Bonus_team7_DF2.index:
+				if (Bonus_team7_DF2["PLAYER"][j]==key):
+					Bonus_team7_dict[key]=Bonus_team7_dict[key]+int(Bonus_team7_DF2["Wkts"][j])*25
+
+	Bonus_team7_tuples=[("David Warner",Bonus_team7_dict["David Warner"]),("KL Rahul",Bonus_team7_dict["KL Rahul"]),("Kagiso Rabada",Bonus_team7_dict["Kagiso Rabada"]),("Ben Stokes",Bonus_team7_dict["Ben Stokes"])]
+	#for key in Bonus_team6_dict:
+	#	Bonus_team6_tuples.append((key,Bonus_team6_dict[key]))
+	Bonus_team7_tuples.sort(key = lambda x: x[1], reverse=True)	
+
+	y=0
+	for i in Bonus_team7_DF2.index:
+		y=y+int(Bonus_team7_DF2["Wkts"][i])
+		if (Bonus_team7_tuples[0][0]==Bonus_team7_DF2["PLAYER"][i]):
+			team7_bowl_point.append(50*Bonus_team7_DF2["Wkts"][i])
+		elif Bonus_team7_tuples[1][0]==Bonus_team7_DF2["PLAYER"][i]:
+			team7_bowl_point.append(37.5*Bonus_team7_DF2["Wkts"][i])
+		else:
+			team7_bowl_point.append(25*Bonus_team7_DF2["Wkts"][i])			
+	    
+	   # y.append(team6_bowl_data["Wkts"])
+	team7_bowl_data.insert(2,"Points",team7_bowl_point,True)
+	a=0
+	for i in Bonus_team7_DF1.index:
+		if Bonus_team7_tuples[0][0]==Bonus_team7_DF1["Player"][i]:
+			 team7_bat_point.append(2*int(Bonus_team7_DF1["Runs"][i]))
+		elif Bonus_team7_tuples[1][0]==Bonus_team7_DF1["Player"][i]:
+			team7_bat_point.append(1.5*int(Bonus_team7_DF1["Runs"][i]))
+		else:
+			team7_bat_point.append(1*int(Bonus_team7_DF1["Runs"][i]))
+		a=a+int(Bonus_team7_DF1["Runs"][i])
+
+
+
+	  #  team7_bat_point.append(team7_bat_data["Runs"])
+	#for i in range(len(team7_bat_point)):
+	 #   a=a+team7_bat_point[i]
+
+	team7_bat_data.insert(2, "Points", team7_bat_point, True)
+	team7_bat_TRP=(sum(team7_bat_point))
+	team7_bowl_TWP=(sum(team7_bowl_point))
+	team7_total_points=team7_bat_TRP+team7_bowl_TWP
+	team7_bat_point={"Player":"Total","Matches":"","Runs":a,"Points":team7_bat_TRP}
+	team7_bowl_point={"PLAYER":"Total","Matches":"","Wkts":y,"Points":team7_bowl_TWP}
+	team7_bat_data=team7_bat_data.append(team7_bat_point,ignore_index=True,sort=False)
+	team7_bowl_data=team7_bowl_data.append(team7_bowl_point,ignore_index=True,sort=False)
+	print(team7_bowl_data)
+	print("\n")
+	print(team7_bat_data)
+	print("\n")
+	print(team7_bat_TRP,team7_bowl_TWP,team7_total_points)
+	team7_BatFinal={}
+	team7_BowlFinal={}
+	team7_BatFinal["Players"]=team7_bat_data["Player"]
+	team7_BatFinal["Runs"]=team7_bat_data["Runs"]
+	team7_BatFinal["Points"]=team7_bat_data["Points"]
+	team7_BatFinal["Matches"]=team7_bat_data["Matches"]
+	team7_BowlFinal["Players"]=team7_bowl_data["PLAYER"]
+	team7_BowlFinal["Wickets"]=team7_bowl_data["Wkts"]
+	team7_BowlFinal["Points"]=team7_bowl_data["Points"]
+	team7_BowlFinal["Matches"]=team7_bowl_data["Matches"]
+
+	print(team7_BatFinal)
+	print("\n")
+	print(team7_BowlFinal)
+
+	#End team7
+
+
+
+	
+
+	point_table2=[("Karan",team6_bat_TRP,team6_bowl_TWP,team6_total_points),("Kavin",team7_bat_TRP,team7_bowl_TWP,team7_total_points)]
+	point_table2.sort(key = lambda x: x[3], reverse=True)
+	print(point_table2)
+
+
+
 	point_table=[("Shubh",team1_bat_TRP,team1_bowl_TWP,team1_total_points),("Karan",team2_bat_TRP,team2_bowl_TWP,team2_total_points),("Harsh",team3_bat_TRP,team3_bowl_TWP,team3_total_points),("Amish",team4_bat_TRP,team4_bowl_TWP,team4_total_points),("Viraj",team5_bat_TRP,team5_bowl_TWP,team5_total_points)]
 	point_table.sort(key = lambda x: x[3], reverse=True)
 	print(point_table)
 
-	return render_template("cricket.html", posts=team1_BatFinal, posts2=team2_BatFinal,Posts=team1_BowlFinal,Posts2=team2_BowlFinal,posts3=team3_BatFinal,Posts3=team3_BowlFinal,posts4=team4_BatFinal,Posts4=team4_BowlFinal,point_table=point_table,posts5=team5_BatFinal,Posts5=team5_BowlFinal)
+	return render_template("cricket.html", posts=team1_BatFinal, posts2=team2_BatFinal,Posts=team1_BowlFinal,Posts2=team2_BowlFinal,posts3=team3_BatFinal,Posts3=team3_BowlFinal,posts4=team4_BatFinal,Posts4=team4_BowlFinal,point_table=point_table,posts5=team5_BatFinal,Posts5=team5_BowlFinal,  posts6=team6_BatFinal, posts7=team7_BatFinal,Posts6=team6_BowlFinal,Posts7=team7_BowlFinal,point_table2=point_table2,Bonus1=Bonus_team6_tuples,Bonus2=Bonus_team7_tuples)
 	 # return (total_runs)
 
 	csv_file.close()
