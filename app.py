@@ -11,27 +11,48 @@ app = Flask(__name__)
  
 def hello_world():
 
-	team1_bat=["Rishabh Pant","Jasprit Bumrah","Suresh Raina","Andre Russell","Mohammad Shami","Ishan Kishan","Jos Buttler","Prithvi Shaw","T Natarajan","Mohammed Siraj","Kieron Pollard","Vijay Shankar","Pat Cummins"]
+	team1_bat=["Rishabh Pant","Jasprit Bumrah","Suresh Raina","Andre Russell","Mohammad Shami",
+			   "Ishan Kishan","Jos Buttler","Prithvi Shaw","T Natarajan","Mohammed Siraj",
+			   "Kieron Pollard","Vijay Shankar","Pat Cummins"]
 	team1_bowl=team1_bat
 
-	team2_bat=["Rashid Khan","Rohit Sharma","Jofra Archer","Krunal Pandya","Chris Woakes","Deepak Chahar","Rahul Chahar","Jonny Bairstow","Shardul Thakur","Navdeep Saini","Riley Meredith","Prasidh Krishna","Dinesh Karthik"]
+	team2_bat=["Rashid Khan","Rohit Sharma","Jofra Archer","Krunal Pandya","Chris Morris",
+			   "Deepak Chahar","Rahul Chahar","Jonny Bairstow","Shardul Thakur","Navdeep Saini",
+			   "Riley Meredith","Prasidh Krishna","Dinesh Karthik"]
 	team2_bowl=team2_bat
 	
-	team3_bat=["Virat Kohli","KL Rahul","Suryakumar Yadav","Ben Stokes","Manish Pandey","Quinton de Kock","Varun Chakravarthy","Trent Boult","Sanju Samson","Marcus Stoinis","Sandeep Sharma","Eoin Morgan","Ruturaj Gaikwad"]
+	team3_bat=["Virat Kohli","KL Rahul","Suryakumar Yadav","Ben Stokes","Manish Pandey",
+			   "Quinton de Kock","Varun Chakravarthy","Trent Boult","Sanju Samson","Marcus Stoinis",
+			   "Sandeep Sharma","Eoin Morgan","Ruturaj Gaikwad"]
 	team3_bowl=team3_bat
 	
-	team4_bat=["David Warner","Shikhar Dhawan","Yuzvendra Chahal","Kagiso Rabada","Mayank Agarwal","Shubman Gill","Sam Curran","Nitish Rana","Shreyas Gopal","Axar Patel","Faf du Plessis","David Malan","Rahul Tewatia"]
+	team4_bat=["David Warner","Shikhar Dhawan","Yuzvendra Chahal","Kagiso Rabada","Mayank Agarwal",
+			   "Shubman Gill","Sam Curran","Nitish Rana","Shreyas Gopal","Axar Patel",
+			   "Faf du Plessis","David Malan","Rahul Tewatia"]
 	team4_bowl=team4_bat
 
-	team5_bat=["Hardik Pandya", "Glenn Maxwell","Bhuvneshwar Kumar","AB de Villiers","Ravichandran Ashwin","Sunil Narine","Ravindra Jadeja","Devdutt Padikkal","Moeen Ali","Washington Sundar","Ambati Rayudu","Chris Gayle","MS Dhoni"]
+	team5_bat=["Hardik Pandya", "Glenn Maxwell","Bhuvneshwar Kumar","AB de Villiers","Ravichandran Ashwin",
+			   "Sunil Narine","Ravindra Jadeja","Devdutt Padikkal","Moeen Ali","Washington Sundar",
+			   "Ambati Rayudu","Chris Gayle","MS Dhoni"]
 	team5_bowl=team5_bat
 
-	team6_bat=["Virat Kohli","Rohit Sharma","Jasprit Bumrah","Trent Boult","Shubman Gill","Rashid Khan","Jos Buttler","AB de Villiers","Chris Morris","Rishabh Pant","Mohammad Shami","Shikhar Dhawan","Suresh Raina","Glenn Maxwell","Yuzvendra Chahal","Hardik Pandya","Sanju Samson","Ravindra Jadeja","Nitish Rana","Ravichandran Ashwin","Eoin Morgan","Deepak Chahar","Prithvi Shaw","Shakib Al Hasan","Navdeep Saini","Jonny Bairstow","Dwayne Bravo","Steve Smith"]
+	team6_bat=["Virat Kohli","Rohit Sharma","Jasprit Bumrah","Trent Boult","Shubman Gill",
+			   "Rashid Khan","Jos Buttler","AB de Villiers","Chris Morris","Rishabh Pant",
+			   "Mohammad Shami","Shikhar Dhawan","Suresh Raina","Glenn Maxwell","Yuzvendra Chahal",
+			   "Hardik Pandya","Sanju Samson","Ravindra Jadeja","Nitish Rana","Ravichandran Ashwin",
+			   "Eoin Morgan","Deepak Chahar","Prithvi Shaw","Shakib Al Hasan","Navdeep Saini",
+			   "Jonny Bairstow","Dwayne Bravo","Steve Smith"]
+
 	team6_bowl=team6_bat
 	team6_bonus=["Virat Kohli","Jasprit Bumrah","Rohit Sharma","Rashid Khan"]
 	Bonus_team6_dict={"Virat Kohli":0,"Rohit Sharma":0,"Jasprit Bumrah":0,"Rashid Khan":0}
 
-	team7_bat=["Ben Stokes","KL Rahul","David Warner","Kagiso Rabada","Suryakumar Yadav","Anrich Nortje","Mayank Agarwal","Faf du Plessis","Marcus Stoinis","Bhuvneshwar Kumar","Andre Russell","Sam Curran","Shardul Thakur","T Natarajan","Devdutt Padikkal","Quinton de Kock","Pat Cummins","Varun Chakravarthy","Rahul Chahar","Manish Pandey","Dan Christian","Axar Patel","Rahul Tewatia","Mohammed Siraj","Ishan Kishan","Kane Williamson","Nicholas Pooran"]
+	team7_bat=["Ben Stokes", "KL Rahul","David Warner","Kagiso Rabada","Suryakumar Yadav",
+			   "Anrich Nortje","Mayank Agarwal","Faf du Plessis","Marcus Stoinis","Bhuvneshwar Kumar",
+			   "Andre Russell","Sam Curran","Shardul Thakur","T Natarajan","Devdutt Padikkal",
+			   "Quinton de Kock","Pat Cummins","Varun Chakravarthy","Rahul Chahar","Manish Pandey",
+			   "Dan Christian","Axar Patel","Rahul Tewatia","Mohammed Siraj","Ishan Kishan",
+			   "Kane Williamson","Nicholas Pooran","Jhye Richardson"]
 	team7_bowl=team7_bat
 	team7_bonus=["David Warner","Andre Russell","Hardik Pandya","Sunil Narine"]
 	Bonus_team7_dict={"David Warner":0,"Ben Stokes":0,"Kagiso Rabada":0,"KL Rahul":0}
