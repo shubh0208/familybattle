@@ -280,7 +280,7 @@
 <hr style="margin-top: 50px;">
 <!-- KARAN KAVIN -->
 	<div id="karan-kavin" class="team_heading" style="margin-top:  60px; background: grey;"> 
-		Karan V/S Kavin
+		Karan v/s Kavin
 	</div>
 	<div id="battle2" class="">  <!-- 
 	<div id ="menu">Welcome to the Friends Cricket Battle</div> -->
@@ -487,6 +487,228 @@
 </div>
 </div>
 
+<!-- AMISH FRIENDS -->
+	<hr style="margin-top: 55px;">
+	<div id="friends-battle" class="team_heading" style="margin-top:  50px; background: grey;"> 
+		Friends Battle
+	</div>
+	<br>
+	<div id="battle3"  ><!-- 
+	<div id ="menu">Welcome to the Family Cricket Battle</div> -->
+	<br>
+	<br>
+	
+	<div id="amish2" class="team_heading">
+		Team Amish
+	</div>
+	<br>
+	<div id="team8" class="team_table">
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Runs</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(posts8.Players|length) %}
+    <tr>
+    	<th>{{ posts8.Players[i] }}</th>
+    	<th>{{ posts8.Matches[i] }} </th>
+    	<th>{{ posts8.Runs[i] }} </th>
+    	<th>{{ posts8.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+	<br>
+	
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Wickets</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(Posts8.Players|length) %}
+    <tr>
+    	<th>{{ Posts8.Players[i] }}</th>
+    	<th>{{ Posts8.Matches[i] }} </th>
+    	<th>{{ Posts8.Wickets[i] }} </th>
+    	<th>{{ Posts8.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+	</div>
+
+<br>
+<br>
+	<div id="khushal"  class="team_heading">
+		Team Khushal
+	</div>
+	<br>
+<div id="team9" class="team_table">
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Runs Scored</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(posts9.Players|length) %}
+    <tr>
+    	<th>{{ posts9.Players[i] }}</th>
+    	<th>{{ posts9.Matches[i] }}</th>
+    	<th>{{ posts9.Runs[i] }} </th>
+    	<th>{{ posts9.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+	<br>
+	
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Wickets</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(Posts9.Players|length) %}
+    <tr>
+    	<th>{{ Posts9.Players[i] }}</th>
+    	<th>{{ Posts9.Matches[i] }}</th>
+    	<th>{{ Posts9.Wickets[i] }} </th>
+    	<th>{{ Posts9.Points[i] }}</th>
+
+    </tr>
+	{% endfor %}
+	</table>
+</div>
+
+
+<br>
+<br>
+	<div id="jinay" class="team_heading">
+		Team Jinay
+	</div>
+	<br>
+<div id="team10" class="team_table">
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Runs Scored</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(posts10.Players|length) %}
+    <tr>
+    	<th>{{ posts10.Players[i] }}</th>
+    	<th>{{ posts10.Matches[i] }} </th>
+    	<th>{{ posts10.Runs[i] }} </th>
+    	<th>{{ posts10.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+	<br>
+	
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Wickets</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(Posts10.Players|length ) %}
+    <tr>
+    	<th>{{ Posts10.Players[i] }}</th>
+    	<th>{{ Posts10.Matches[i] }} </th>
+    	<th>{{ Posts10.Wickets[i] }} </th>
+    	<th>{{ Posts10.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+</div>
+
+<br>
+<br>
+	<div id="deep" class="team_heading">
+		Team Deep
+	</div>
+	<br>
+<div id="team11" class="team_table">
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Runs Scored</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range( posts11.Players|length) %}
+    <tr>
+    	<th>{{ posts11.Players[i] }}</th>
+    	<th>{{ posts11.Matches[i] }} </th>
+    	<th>{{ posts11.Runs[i] }} </th>
+    	<th>{{ posts11.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+	<br>
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Wickets</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(Posts11.Players|length) %}
+    <tr>
+    	<th>{{ Posts11.Players[i] }}</th>
+    	<th>{{ Posts11.Matches[i] }} </th>
+    	<th>{{ Posts11.Wickets[i] }} </th>
+    	<th>{{ Posts11.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+</div>
+<br>
+<br>
+
+
+<div id="rank3" class="team_heading" >
+	Leaderboard 
+</div>
+<br>
+<div id="point_table3" >
+	<table>
+		<tr>
+			<th>Rank</th>
+			<th>Team Name</th>
+			<th>Batting Points</th>
+			<th>Bowling Points</th>
+			<th id="Table_points">Total Points</th>
+			<th>Points to win</th>
+		</tr>
+		{% for i in range(4) %}
+		<tr>
+			<th>{{ (i+1) }}</th>
+			<th>{{ point_table3[i][0] }}</th>
+			<th>{{ point_table3[i][1] }}</th>
+			<th>{{ point_table3[i][2] }}</th>
+			<th id="Table_points">{{ point_table3[i][3] }}</th>
+			<th>{{ point_table3[0][3]-point_table3[i][3] }}</th>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+</div>
+
+
 <hr style="margin-top: 60px;">
 <script type="text/javascript">
 	$(document).ready(function()  {
@@ -494,6 +716,7 @@
 		$("#family-battle").click(function(){
 			$("#battle").slideToggle();
 			$("#battle2").hide();
+			$("#battle3").hide();
 		});
 			
 		$("#shubh").click(function(){
@@ -571,6 +794,7 @@
 		$("#karan-kavin").click(function(){
 			$("#battle2").slideToggle();
 			$("#battle").hide();
+			$("#battle3").hide();
 		});
 			
 		$("#karan2").click(function(){
@@ -599,6 +823,65 @@
 			$("#team7").hide();
 			
 			
+		});
+		});
+
+	$(document).ready(function()  {
+
+		$("#friends-battle").click(function(){
+			$("#battle3").slideToggle();
+			$("#battle2").hide();
+			$("#battle").hide();
+		});
+			
+		$("#amish2").click(function(){
+			$("#team8").slideToggle();
+			$("#team9").hide();
+			$("#team10").hide();
+			$("#team11").hide();
+		});
+		});
+
+	$(document).ready(function()  {
+			
+		$("#khushal").click(function(){
+			$("#team9").slideToggle();
+			$("#team8").hide();
+			$("#team10").hide();
+			$("#team11").hide();
+		});
+		});
+
+	$(document).ready(function()  {
+			
+		$("#jinay").click(function(){
+			$("#team10").slideToggle();
+			$("#team8").hide();
+			$("#team9").hide();
+			$("#team11").hide();
+		});
+		});
+
+	$(document).ready(function()  {
+			
+		$("#deep").click(function(){
+			$("#team11").slideToggle();
+			$("#team8").hide();
+			$("#team9").hide();
+			$("#team10").hide();
+		});
+		});
+
+	
+
+	$(document).ready(function()  {
+			
+		$("#rank3").click(function(){
+			$("#point_table3").slideToggle();
+			$("#team8").hide();
+			$("#team9").hide();
+			$("#team10").hide();
+			$("#team11").hide();
 		});
 		});
 </script>

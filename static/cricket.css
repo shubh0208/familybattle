@@ -32,26 +32,50 @@ table, th, td
 {
 	display: none;	
 }
+#point_table3
+{
+	display: none;	
+}
+
+
 #Table_points
 {
 	background-color: #C7F5B3;
 }
-#Bonus
+
+
+#battle
 {
-	background-color: #C7F5B3; 
+	display: none;
+}
+#battle3
+{
+	display: none;
 }
 #battle2
 {
 	display: none;
 }
-#battle
+#Bonus
 {
-	display: none;
+	background-color: #C7F5B3; 
 }
+
+
 #rank
 {
 background-color: #B7F5F4;
 }
+#rank2
+{
+background-color: #B7F5F4;
+}
+#rank3
+{
+background-color: #B7F5F4;
+}
+
+
 #shubh
 {
 background-color: #FFFF3C;
@@ -72,6 +96,8 @@ background-color: #FF822A;
 {
 background-color: #E83895;
 }
+
+
 #karan2
 {
 background-color: #EA99F6;
@@ -80,10 +106,25 @@ background-color: #EA99F6;
 {
 background-color: #ED1B24;
 }
-#rank2
+
+
+#amish2
 {
-background-color: #B7F5F4;
+background-color: #FFFF3C;
 }
+#khushal
+{
+background-color: #EA99F6;
+}
+#jinay
+{
+background-color: #ED1B24;
+}
+#deep
+{
+background-color: #FF822A;
+}
+
 
 body
 {
