@@ -55,7 +55,7 @@ def hello_world():
 			   "Dan Christian","Axar Patel","Rahul Tewatia","Mohammed Siraj","Ishan Kishan",
 			   "Kane Williamson","Nicholas Pooran","Jhye Richardson"]
 	team7_bowl=team7_bat
-	team7_bonus=["David Warner","Andre Russell","Hardik Pandya","Sunil Narine"]
+	team7_bonus=["David Warner","Ben Stokes","Kagiso Rabada","KL Rahul"]
 	Bonus_team7_dict={"David Warner":0,"Ben Stokes":0,"Kagiso Rabada":0,"KL Rahul":0}
 
 	# AMISH FRIENDS
