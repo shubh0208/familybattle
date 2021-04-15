@@ -383,22 +383,22 @@
 			<th>Points</th>
 		</tr>
     
-    {% for i in range(Posts7.Players|length) %}
+    {% for i in range(posts7.Players|length) %}
 
-     {% if Bonus2[0][0]==Posts7.Players[i] %} 
+     {% if Bonus2[0][0]==posts7.Players[i] %} 
     <tr id="Bonus">
-    	<th>{{ Posts7.Players[i] }}</th>
-    	<th>{{ Posts7.Matches[i] }} </th>
-    	<th>{{ Posts7.Runs[i] }} </th>
-    	<th>{{ Posts7.Points[i] }}</th>
+    	<th>{{ posts7.Players[i] }}</th>
+    	<th>{{ posts7.Matches[i] }} </th>
+    	<th>{{ posts7.Runs[i] }} </th>
+    	<th>{{ posts7.Points[i] }}</th>
     </tr>
 
-    {% elif Bonus2[1][0]==Posts7  .Players[i] %} 
+    {% elif Bonus2[1][0]==Posts7.Players[i] %} 
     <tr id="Bonus">
-    	<th>{{ Posts7.Players[i] }}</th>
-    	<th>{{ Posts7.Matches[i] }} </th>
-    	<th>{{ Posts7.Runs[i] }} </th>
-    	<th>{{ Posts7.Points[i] }}</th>
+    	<th>{{ posts7.Players[i] }}</th>
+    	<th>{{ posts7.Matches[i] }} </th>
+    	<th>{{ posts7.Runs[i] }} </th>
+    	<th>{{ posts7.Points[i] }}</th>
     </tr>
     {% else %}
 
@@ -433,10 +433,10 @@
 
     {% elif Bonus2[1][0]==Posts7.Players[i] %} 
     <tr id="Bonus">
-    	<th>{{ posts7.Players[i] }}</th>
-    	<th>{{ posts7.Matches[i] }}</th>
-    	<th>{{ posts7.Wickets[i] }} </th>
-    	<th>{{ psosts7.Points[i] }}</th>
+    	<th>{{ Posts7.Players[i] }}</th>
+    	<th>{{ Posts7.Matches[i] }}</th>
+    	<th>{{ Posts7.Wickets[i] }} </th>
+    	<th>{{ Posts7.Points[i] }}</th>
     </tr>
       
     {% else %}
