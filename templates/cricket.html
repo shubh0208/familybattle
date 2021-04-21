@@ -708,8 +708,141 @@
 </div>
 </div>
 
+	<hr style="margin-top: 50px;">
+	<div id="Karan-Friends" class="team_heading" style="margin-top:  50px; background: grey;"> 
+		Karan Friends
+	</div>
+	<br>
+	<div id="battle4"  ><!-- 
+	<div id ="menu">Welcome to the Family Cricket Battle</div> -->
+	<br>
+	<br>
+	
+	<div id="karan3" class="team_heading">
+		Team karan
+	</div>
+	<br>
+	<div id="team12" class="team_table">
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Runs</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(posts12.Players|length) %}
+    <tr>
+    	<th>{{ posts12.Players[i] }}</th>
+    	<th>{{ posts12.Matches[i] }} </th>
+    	<th>{{ posts12.Runs[i] }} </th>
+    	<th>{{ posts12.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+	<br>
+	
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Wickets</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(Posts12.Players|length) %}
+    <tr>
+    	<th>{{ Posts12.Players[i] }}</th>
+    	<th>{{ Posts12.Matches[i] }} </th>
+    	<th>{{ Posts12.Wickets[i] }} </th>
+    	<th>{{ Posts12.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+	</div>
 
-<hr style="margin-top: 60px;">
+<br>
+<br>
+	<div id="kavin2"  class="team_heading">
+		Team Kavin
+	</div>
+	<br>
+<div id="team13" class="team_table">
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Runs Scored</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(posts13.Players|length) %}
+    <tr>
+    	<th>{{ posts13.Players[i] }}</th>
+    	<th>{{ posts13.Matches[i] }}</th>
+    	<th>{{ posts13.Runs[i] }} </th>
+    	<th>{{ posts13.Points[i] }}</th>
+    </tr>
+	{% endfor %}
+	</table>
+	<br>
+	
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Matches</th>
+			<th>Wickets</th>
+			<th>Points</th>
+		</tr>
+    
+    {% for i in range(Posts13.Players|length) %}
+    <tr>
+    	<th>{{ Posts13.Players[i] }}</th>
+    	<th>{{ Posts13.Matches[i] }}</th>
+    	<th>{{ Posts13.Wickets[i] }} </th>
+    	<th>{{ Posts13.Points[i] }}</th>
+
+    </tr>
+	{% endfor %}
+	</table>
+</div>
+
+
+<br>
+<br>
+	
+
+<div id="rank4" class="team_heading" >
+	Leaderboard 
+</div>
+<br>
+<div id="point_table4" >
+	<table>
+		<tr>
+			<th>Rank</th>
+			<th>Team Name</th>
+			<th>Batting Points</th>
+			<th>Bowling Points</th>
+			<th id="Table_points">Total Points</th>
+			<th>Points to win</th>
+		</tr>
+		{% for i in range(2) %}
+		<tr>
+			<th>{{ (i+1) }}</th>
+			<th>{{ point_table4[i][0] }}</th>
+			<th>{{ point_table4[i][1] }}</th>
+			<th>{{ point_table4[i][2] }}</th>
+			<th id="Table_points">{{ point_table4[i][3] }}</th>
+			<th>{{ point_table4[0][3]-point_table4[i][3] }}</th>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+</div>
+
+
+
+
 <script type="text/javascript">
 	$(document).ready(function()  {
 
@@ -717,6 +850,7 @@
 			$("#battle").slideToggle();
 			$("#battle2").hide();
 			$("#battle3").hide();
+			$("#battle4").hide();
 		});
 			
 		$("#shubh").click(function(){
@@ -795,6 +929,7 @@
 			$("#battle2").slideToggle();
 			$("#battle").hide();
 			$("#battle3").hide();
+			$("#battle4").hide();
 		});
 			
 		$("#karan2").click(function(){
@@ -832,6 +967,7 @@
 			$("#battle3").slideToggle();
 			$("#battle2").hide();
 			$("#battle").hide();
+			$("#battle4").hide();
 		});
 			
 		$("#amish2").click(function(){
@@ -882,6 +1018,48 @@
 			$("#team9").hide();
 			$("#team10").hide();
 			$("#team11").hide();
+		});
+		});
+
+
+
+	$(document).ready(function()  {
+
+
+
+		$("#Karan-Friends").click(function(){
+			$("#battle4").slideToggle();
+			$("#battle").hide();
+			$("#battle3").hide();
+			$("#battle2").hide();
+		});
+			
+		$("#karan3").click(function(){
+			$("#team12").slideToggle();
+			$("#team13").hide();
+			
+			
+		});
+		});
+
+	$(document).ready(function()  {
+			
+		$("#kavin2").click(function(){
+			$("#team13").slideToggle();
+			$("#team12").hide();
+			
+			
+		});
+		});	
+
+	$(document).ready(function()  {
+			
+		$("#rank4").click(function(){
+			$("#point_table4").slideToggle();
+			$("#team12").hide();
+			$("#team13").hide();
+			
+			
 		});
 		});
 </script>

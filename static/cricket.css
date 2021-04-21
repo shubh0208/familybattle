@@ -36,6 +36,10 @@ table, th, td
 {
 	display: none;	
 }
+#point_table4
+{
+	display: none;	
+}
 
 
 #Table_points
@@ -52,6 +56,10 @@ table, th, td
 {
 	display: none;
 }
+#battle4
+{
+	display: none;
+}
 #battle2
 {
 	display: none;
@@ -60,6 +68,7 @@ table, th, td
 {
 	background-color: #C7F5B3; 
 }
+
 
 
 #rank
@@ -71,6 +80,10 @@ background-color: #B7F5F4;
 background-color: #B7F5F4;
 }
 #rank3
+{
+background-color: #B7F5F4;
+}
+#rank4
 {
 background-color: #B7F5F4;
 }
@@ -123,6 +136,15 @@ background-color: #ED1B24;
 #deep
 {
 background-color: #FF822A;
+}
+
+#karan3
+{
+background-color: #EA99F6;
+}
+#kavin2
+{
+background-color: #ED1B24;
 }
 
 
