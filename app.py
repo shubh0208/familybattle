@@ -88,7 +88,7 @@ def hello_world():
 			   "Rashid Khan","T Natarajan","Sandeep Sharma"]
 	team12_bowl=team12_bat
 
-	team13_bat =["Ravichandran Jadeja", "Shardul Thakur","Sam Curran","Kagiso Rabada","Marcus Stoinis",
+	team13_bat =["Ravindra Jadeja", "Shardul Thakur","Sam Curran","Kagiso Rabada","Marcus Stoinis",
 			     "Shikhar Dhawan","Axar Patel","Prithvi Shaw","Shubman Gill","Pat Cummins",
 			     "Prasidh Krishna","Andre Russell","Jasprit Bumrah","Suryakumar Yadav","Rahul Chahar",
 			     "Mayank Agarwal","Mohammad Shami","Jhye Richardson","Virat Kohli","Mohammed Siraj",
